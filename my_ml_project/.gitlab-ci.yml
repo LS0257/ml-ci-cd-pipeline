@@ -1,0 +1,16 @@
+stages:
+  - test
+  - deploy
+
+# Job to run tests
+test_job:
+  stage: test
+  script:
+    - tox  # This will run the tests
+
+# Job to deploy the model
+deploy_job:
+  stage: deploy
+  script:
+    - tox -e deploy  # This will run the deployment
+ 
